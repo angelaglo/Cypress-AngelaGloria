@@ -1,0 +1,49 @@
+{
+    "valid": {
+        "firstName": "Ayu",
+        "lastName": "Dia",
+        "email" : "testXXX@gmail.com",
+        "pass" : "Ayudia123",
+        "cpass" : "Ayudia123",
+        "alertElement" : ".message-success > div",
+        "text" : "Thank you for registering with Main Website Store"
+    },
+    "invalid": [
+        {
+            "invalidFirstName": "Ayu",
+            "invalidLastName": "Dia",
+            "invalidEmail" : "test",
+            "invalidPass" : "Ayudia123",
+            "invalidCpass" : "Ayudia123",
+            "errorElement" : "#email_address-error",
+            "text" : "Please enter a valid email address (Ex: johndoe@domain.com)"
+        },
+        {
+            "invalidFirstName": "Ayu",
+            "invalidLastName": "Dia",
+            "invalidEmail" : "testX@gmail.com",
+            "invalidPass" : "123",
+            "invalidCpass" : "123",
+            "errorElement" : "#password-error",
+            "text" : "Minimum length of this field must be equal or greater than 8 symbols. Leading and trailing spaces will be ignored"
+        },
+        {
+            "invalidFirstName": "Ayu",
+            "invalidLastName": "Dia",
+            "invalidEmail" : "testX@gmail.com",
+            "invalidPass" : "Ayudia123",
+            "invalidCpass" : "123",
+            "errorElement" : "#password-confirmation-error",
+            "text" : "Please enter the same value again"
+        },
+        {
+            "invalidFirstName": "Ayu",
+            "invalidLastName": "Dia",
+            "invalidEmail" : "123123123@gmail.com",
+            "invalidPass" : "Ayudia123",
+            "invalidCpass" : "Ayudia123",
+            "errorElement" : ".message-error > div",
+            "text" : "There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account"
+        }
+    ]
+}
