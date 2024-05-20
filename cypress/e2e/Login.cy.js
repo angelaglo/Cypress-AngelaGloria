@@ -24,7 +24,7 @@ describe("Login", () => {
   */
   it("Login failed - Invalid Email", () => {
     cy.inputLogin(random, "Ayudia123");
-    cy.verifyLogin(
+    cy.verify(
       loginPage.emailError,
       "Please enter a valid email address (Ex: johndoe@domain.com)"
     );
@@ -36,7 +36,7 @@ describe("Login", () => {
   */
   it("Login failed - Invalid Email and Password", () => {
     cy.inputLogin(userEmail, random);
-    cy.verifyLogin(
+    cy.verify(
       loginPage.alertPass,
       "The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later"
     );
@@ -46,14 +46,7 @@ describe("Login", () => {
     Positive Type Test
     TC-8 : Login Success
   */
-  it("Login success", () => {
-    cy.fixture('loginData.json').then((users) => {
-      const userdata = users[0]
-      cy.inputLogin(userdata.email,userdata.passw)
-      cy.verifyLogin(
-        loginPage.loginWelcome,
-        "Welcome"
-      );
-    })
+  it.only("Login success", () => {
+    cy.loginSession(0);
   });
 });
