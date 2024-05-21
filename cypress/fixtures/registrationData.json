@@ -2,7 +2,7 @@
     "valid": {
         "firstName": "Ayu",
         "lastName": "Dia",
-        "email" : "testXXX@gmail.com",
+        "email" : "testXXXYYY@gmail.com",
         "pass" : "Ayudia123",
         "cpass" : "Ayudia123",
         "alertElement" : ".message-success > div",
@@ -21,7 +21,7 @@
         {
             "invalidFirstName": "Ayu",
             "invalidLastName": "Dia",
-            "invalidEmail" : "testX@gmail.com",
+            "invalidEmail" : "testXXXYYY@gmail.com",
             "invalidPass" : "123",
             "invalidCpass" : "123",
             "errorElement" : "#password-error",
@@ -30,7 +30,7 @@
         {
             "invalidFirstName": "Ayu",
             "invalidLastName": "Dia",
-            "invalidEmail" : "testX@gmail.com",
+            "invalidEmail" : "testXXXYYY@gmail.com",
             "invalidPass" : "Ayudia123",
             "invalidCpass" : "123",
             "errorElement" : "#password-confirmation-error",

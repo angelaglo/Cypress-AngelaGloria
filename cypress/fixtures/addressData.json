@@ -1,0 +1,15 @@
+{
+  "valid": {
+    "firstName": "Ayu",
+    "lastName": "Doi",
+    "company": "XYZ Company",
+    "phoneNo": "4331238743",
+    "street1": "Mountain",
+    "street2": "Forest",
+    "street3": "Beach",
+    "city": "Florida",
+    "province": "Arizona",
+    "value": "4",
+    "zip": "16493"
+  }
+}

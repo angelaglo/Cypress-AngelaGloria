@@ -46,7 +46,7 @@ describe("Login", () => {
     Positive Type Test
     TC-8 : Login Success
   */
-  it.only("Login success", () => {
+  it("Login success", () => {
     cy.loginSession(0);
   });
 });

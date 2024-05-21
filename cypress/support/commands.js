@@ -1,6 +1,7 @@
 import registrationPage from "../support/pageObject/registrationClass";
 import loginPage from "../support/pageObject/loginClass";
 import accountInformationPage from "../support/pageObject/accountInformationClass";
+import accountAddressPage from "../support/pageObject/accountAddressClass";
 
 //Check URL
 Cypress.Commands.add("urlVerify", (url) => {
@@ -34,42 +35,59 @@ Cypress.Commands.add("loginSession", (i) => {
   cy.fixture("loginData.json").then((users) => {
     const userdata = users[i];
     cy.session(
-        "login",
-        () => {
-          cy.visit("");
-          cy.get(loginPage.signIn).click();
-          cy.wait(200);
-          cy.urlVerify("/customer/account/login/");
-          loginPage.inputEmail(userdata.email);
-          loginPage.inputPass(userdata.passw);
-          loginPage.clickLogin();
-    
-          cy.verify(loginPage.loginWelcome, "Welcome");
-        },
-        {
-          cacheAcrossSpecs: true,
-        }
-      );
+      "login",
+      () => {
+        cy.visit("", { responseTimeout: 120000 });
+        cy.get(loginPage.signIn).click();
+        cy.wait(200);
+        cy.urlVerify("/customer/account/login/");
+        loginPage.inputEmail(userdata.email);
+        loginPage.inputPass(userdata.passw);
+        loginPage.clickLogin();
+
+        cy.verify(loginPage.loginWelcome, "Welcome");
+      },
+      {
+        cacheAcrossSpecs: true,
+      }
+    );
   });
 });
 
 //Update Acc Information
 Cypress.Commands.add("inputAcc", () => {
-    cy.get(accountInformationPage.radioEmail).click();
-    cy.get(accountInformationPage.radioPass).click();
-    cy.fixture("loginData.json").then((users) => {
-      const userdata0 = users[0];
-      const userdata1 = users[1];
-      cy.input(accountInformationPage.email, userdata1.email);
-      cy.input(accountInformationPage.cpass, userdata0.passw);
-      cy.input(accountInformationPage.pass, userdata1.passw);
-      cy.input(accountInformationPage.cnpass, userdata1.passw);
-    });
-    accountInformationPage.clickSave();
-    cy.verify(
-      accountInformationPage.alertElement,
-      "You saved the account information"
-    );
+  cy.get(accountInformationPage.radioEmail).click();
+  cy.get(accountInformationPage.radioPass).click();
+  cy.fixture("loginData.json").then((users) => {
+    const userdata0 = users[0];
+    const userdata1 = users[1];
+    cy.input(accountInformationPage.email, userdata1.email);
+    cy.input(accountInformationPage.cpass, userdata0.passw);
+    cy.input(accountInformationPage.pass, userdata1.passw);
+    cy.input(accountInformationPage.cnpass, userdata1.passw);
+  });
+  accountInformationPage.clickSave();
+  cy.verify(
+    accountInformationPage.alertElement,
+    "You saved the account information"
+  );
+});
+
+//Input Address
+Cypress.Commands.add("inputAddress", () => {
+  cy.fixture("addressData.json").then((address) => {
+    const userdata = address.valid;
+    accountAddressPage.inputFirstName(userdata.firstName);
+    accountAddressPage.inputLastName(userdata.lastName);
+    accountAddressPage.inputCompany(userdata.company);
+    accountAddressPage.inputPhoneNo(userdata.phoneNo);
+    accountAddressPage.inputAddr1(userdata.street1);
+    accountAddressPage.inputAddr2(userdata.street2);
+    accountAddressPage.inputAddr3(userdata.street3);
+    accountAddressPage.inputCity(userdata.city);
+    accountAddressPage.inputProvince(userdata.province, userdata.value);
+    accountAddressPage.inputZip(userdata.zip);
+  });
 });
 
 Cypress.Commands.add("verify", (alert, text) => {

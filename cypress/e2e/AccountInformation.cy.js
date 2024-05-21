@@ -1,10 +1,10 @@
 import loginPage from "../support/pageObject/loginClass";
 import accountInformationPage from "../support/pageObject/accountInformationClass";
 
-describe("Login", () => {
+describe("Account Information", () => {
   beforeEach(() => {
     cy.loginSession(0);
-    cy.visit("");
+    cy.visit("",{ responseTimeout: 120000 });
     cy.verify(loginPage.loginWelcome, "Welcome");
     accountInformationPage.openPage();
   });
@@ -32,7 +32,7 @@ describe("Login", () => {
 
   /*
     Positive Type Test
-    TC-11 : Save Success
+    TC-11 : Save Information Success
   */
   it("Save Success", () => {
     cy.inputAcc()
