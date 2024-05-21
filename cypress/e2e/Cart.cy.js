@@ -7,8 +7,6 @@ describe("Add to Cart", () => {
     cy.visit("", { responseTimeout: 120000 });
     cy.verify(loginPage.loginWelcome, "Welcome");
     cy.visit("https://magento.softwaretestingboard.com/checkout/cart/", { responseTimeout: 120000 } )
-    // cartPage.openCart();
-    // cy.get(cartPage.viewCart).should('be.visible')
   });
 
   /*
