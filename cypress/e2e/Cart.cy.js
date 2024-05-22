@@ -11,7 +11,7 @@ describe("Add to Cart", () => {
 
   /*
     Negative Type Test
-    TC-14 : Update Quantity Product Failed - Zero Quantity
+    TC-16 : Update Quantity Product Failed - Zero Quantity
   */
   it("Update Quantity Product Failed - Zero Quantity", () => {
     cy.get(cartPage.cartQty).clear().type('0')
@@ -21,7 +21,7 @@ describe("Add to Cart", () => {
 
   /*
     Positive Type Test
-    TC-15 : Checkout Success
+    TC-17 : Checkout Success
   */
   it.only("Update to Checkout Page Success", () => {
     cy.get(cartPage.delete).click()

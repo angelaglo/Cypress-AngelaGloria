@@ -11,7 +11,7 @@ describe("Add to Cart", () => {
 
   /*
     Negative Type Test
-    TC-14 : Size not selected
+    TC-14 : Add Cart Failed - Size not selected
   */
   it("Add Cart Failed - Invalid Size", () => {
     cy.get(cartPage.hoodies).click();
@@ -24,7 +24,7 @@ describe("Add to Cart", () => {
 
   /*
     Positive Type Test
-    TC-13 : Add Cart Success
+    TC-15 : Add Cart Success
   */
   it("Add Cart Hoodie Success", () => {
     cy.get(cartPage.hoodies).click();
