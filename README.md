@@ -1,6 +1,4 @@
-# Sanber56-Cypress-AngelaGloria
-
-Quiz 2 -Individu - Angela Gloria
+# Cypress-AngelaGloria
 
 Menu Registrasi </br>
 TC-1 : Invalid email format </br>
